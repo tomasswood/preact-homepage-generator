@@ -1,0 +1,16 @@
+$white:             darken(white, 0%);
+$near-white:        darken($white, 1%);
+$white-dark:        darken($white, 10%);
+$grey-dark:         darken($white, 60%);
+$black-light:       darken($white, 80%);
+$black:             lighten(black, 0%);
+
+$gray: #BAC1B8;
+
+$primary: #663AB7;
+$primary-lighter: lighten( $primary, 10% );
+$primary-darker: darken( $primary, 10% );
+
+$font-size-large: 16px;
+$font-size-medium: 14px;
+$font-size-small: 12px;
