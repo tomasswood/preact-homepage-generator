@@ -9,10 +9,10 @@ import Footer from './footer';
 
 export default class Home extends Component {
 	state = {
-		profile: {} // require('../../profile.json')
+		profile: require('../../profile.json')
 	};
 
-	componentWillMount() {
+	componentDidMount() {
 		fetch( '/profile.json' ).then( response => response.json() ).then( profile => this.setState( { profile } ) );
 	}
 

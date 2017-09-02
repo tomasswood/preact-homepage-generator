@@ -1,23 +1,32 @@
 import { h, Component } from 'preact';
 
-const determineImage = ( backgroundImage, backgroundImages ) => {
-	const viewport = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
-		ratio = window.devicePixelRatio || 1;
+const requireAll = requireContext => requireContext.keys().map( requireContext );
 
-	let headerImage = backgroundImage;
+const determineImage = ( backgroundImage, backgroundImages ) => {
+	const viewport = ( typeof window !== 'undefined' ) ? window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth : '1920',
+		ratio = ( typeof window !== 'undefined' ) ? window.devicePixelRatio || 1 : 1;
+
+	let headerImage = require( `../../assets/header/${backgroundImage}` );
 	if ( backgroundImages ) {
-		let imageSizes = backgroundImages.filter( image => ( viewport * ratio ) < image.width );
-		if ( imageSizes.length ) {
-			const lastImage = imageSizes.pop();
-			if ( lastImage ) {
+		const imageModules = requireAll( require.context( '../../assets/header', false ) );
+		let imagesSized = backgroundImages.reduce( ( arr, image, i ) => {
+			if ( ( viewport * ratio ) < image.width ) {
+				image.filename = imageModules[ i ];
+				arr.push( image );
+			}
+
+			return arr;
+		}, [] );
+		if ( imagesSized.length ) {
+			const lastImage = imagesSized.pop();
+			if ( lastImage && lastImage.filename ) {
 				headerImage = lastImage.filename;
 			}
 		}
-
 	}
 
 	if ( headerImage ) {
-		return `url(../../assets/${ headerImage })`;
+		return `url(${ headerImage })`;
 	}
 
 	return;

@@ -69,11 +69,25 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "+5hP":
+/***/ (function(module, exports) {
+
+module.exports = {"header":{"title":"Homepage Generator","subtitle":"Quickly spin up a personal website","background_color":"#663AB7","background_image":"newcastle.jpg","background_images":[{"width":2560,"filename":"newcastle-xlarge.jpg"},{"width":1920,"filename":"newcastle.jpg"},{"width":1600,"filename":"newcastle-large.jpg"},{"width":1280,"filename":"newcastle-medium.jpg"},{"width":960,"filename":"newcastle-small.jpg"},{"width":480,"filename":"newcastle-xsmall.jpg"}]},"profile":{"title":"Profile","background_color":"#FFF","about":{"title":"About me","description":"I love easy to build pages!"},"bio":{"title":"Bio","list":[{"label":"How cool?","value":"Very cool."},{"label":"Where","value":"In the cloud..."}]}},"experience":{"title":"Experience","background_color":"#41564E","list":[{"title":"Education","list":[{"location":"On my computer","time":{"from":"2017","to":"Present"},"title":"Building this","description":"Quickly spun this up in a day for my own personal website"}]},{"title":"What else?","list":[{"location":"Example","time":{"from":"Apr 2011","to":"Apr 2014"},"title":"Something else","description":"Some more stuff."},{"location":"Example","time":{"from":"Apr 2011","to":"Apr 2014"},"title":"Something else","description":"Some more stuff."}]}]},"skills":{"title":"Skills","background_color":"#FFF","list":[{"label":"Speed","value":5},{"label":"Simplicity","value":5},{"label":"Elegance","value":5},{"label":"Uniqueness","value":4}]},"contact":{"title":"Any other links?","background_color":"#5DC6DD","list":[{"label":"Live Example","link":"http://thomaswood.me/","icon_class":"globe"},{"label":"GitHub","link":"https://github.com/tomasswood/preact-homepage-generator","icon_class":"github"}]}}
+
+/***/ }),
+
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("JkW7");
 
+
+/***/ }),
+
+/***/ "4eXR":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "234e30fcb8d8f3074faf94677f88c158.jpg";
 
 /***/ }),
 
@@ -122,11 +136,11 @@ var Home = function (_Component) {
 		}
 
 		return _ret = (_temp = (_this = _possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.state = {
-			profile: {} // require('../../profile.json')
+			profile: __webpack_require__("+5hP")
 		}, _temp), _possibleConstructorReturn(_this, _ret);
 	}
 
-	Home.prototype.componentWillMount = function componentWillMount() {
+	Home.prototype.componentDidMount = function componentDidMount() {
 		var _this2 = this;
 
 		__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_unfetch__["a" /* default */])('/profile.json').then(function (response) {
@@ -156,6 +170,13 @@ var Home = function (_Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_preact__["Component"]);
 
 
+
+/***/ }),
+
+/***/ "ELET":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "f07de9feb4b96a94cca030577f550cd5.jpg";
 
 /***/ }),
 
@@ -263,6 +284,35 @@ var Profile = function (_Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_preact__["Component"]);
 
 
+
+/***/ }),
+
+/***/ "JBMF":
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./newcastle-large.jpg": "TH7f",
+	"./newcastle-medium.jpg": "mo1Q",
+	"./newcastle-small.jpg": "ELET",
+	"./newcastle-xlarge.jpg": "YmqD",
+	"./newcastle-xsmall.jpg": "4eXR",
+	"./newcastle.jpg": "UCVP"
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "JBMF";
 
 /***/ }),
 
@@ -484,6 +534,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
+/***/ "NfrT":
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./newcastle-large.jpg": "TH7f",
+	"./newcastle-medium.jpg": "mo1Q",
+	"./newcastle-small.jpg": "ELET",
+	"./newcastle-xlarge.jpg": "YmqD",
+	"./newcastle-xsmall.jpg": "4eXR",
+	"./newcastle.jpg": "UCVP"
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "NfrT";
+
+/***/ }),
+
 /***/ "QAmr":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -558,6 +637,13 @@ var index = typeof fetch == 'function' ? fetch.bind() : function (url, options) 
 
 /* harmony default export */ __webpack_exports__["a"] = (index);
 //# sourceMappingURL=unfetch.es.js.map
+
+/***/ }),
+
+/***/ "TH7f":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "9e4e1d8d6f4efb1f85bcc338de57704f.jpg";
 
 /***/ }),
 
@@ -650,6 +736,13 @@ var Footer = function (_Component2) {
 }(__WEBPACK_IMPORTED_MODULE_0_preact__["Component"]);
 
 
+
+/***/ }),
+
+/***/ "UCVP":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "cfb572d7700e8995aefaf25a49cbb7d9.jpg";
 
 /***/ }),
 
@@ -802,6 +895,13 @@ var Experience = function (_Component3) {
 
 /***/ }),
 
+/***/ "YmqD":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "fa1386098b541e95769539f4bdb64bf8.jpg";
+
+/***/ }),
+
 /***/ "jJeW":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -819,25 +919,35 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var determineImage = function determineImage(backgroundImage, backgroundImages) {
-	var viewport = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
-	    ratio = window.devicePixelRatio || 1;
+var requireAll = function requireAll(requireContext) {
+	return requireContext.keys().map(requireContext);
+};
 
-	var headerImage = backgroundImage;
+var determineImage = function determineImage(backgroundImage, backgroundImages) {
+	var viewport = typeof window !== 'undefined' ? window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth : '1920',
+	    ratio = typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1;
+
+	var headerImage = __webpack_require__("JBMF")("./" + backgroundImage);
 	if (backgroundImages) {
-		var imageSizes = backgroundImages.filter(function (image) {
-			return viewport * ratio < image.width;
-		});
-		if (imageSizes.length) {
-			var lastImage = imageSizes.pop();
-			if (lastImage) {
+		var imageModules = requireAll(__webpack_require__("NfrT"));
+		var imagesSized = backgroundImages.reduce(function (arr, image, i) {
+			if (viewport * ratio < image.width) {
+				image.filename = imageModules[i];
+				arr.push(image);
+			}
+
+			return arr;
+		}, []);
+		if (imagesSized.length) {
+			var lastImage = imagesSized.pop();
+			if (lastImage && lastImage.filename) {
 				headerImage = lastImage.filename;
 			}
 		}
 	}
 
 	if (headerImage) {
-		return "url(../../assets/" + headerImage + ")";
+		return 'url(' + headerImage + ')';
 	}
 
 	return;
@@ -859,22 +969,22 @@ var Header = function (_Component) {
 		var background_image = _ref.background_image;
 
 		return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-			"header",
-			{ "class": "header", style: { backgroundColor: props.background_color || null, backgroundImage: background_image } },
+			'header',
+			{ 'class': 'header', style: { backgroundColor: props.background_color || null, backgroundImage: background_image } },
 			__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-				"div",
-				{ "class": "header-wrapper" },
+				'div',
+				{ 'class': 'header-wrapper' },
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-					"div",
-					{ "class": "header-wrapper-text" },
+					'div',
+					{ 'class': 'header-wrapper-text' },
 					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-						"h1",
-						{ "class": "title", itemprop: "name" },
+						'h1',
+						{ 'class': 'title', itemprop: 'name' },
 						props.title
 					),
 					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-						"h2",
-						{ "class": "subtitle", itemprop: "jobTitle" },
+						'h2',
+						{ 'class': 'subtitle', itemprop: 'jobTitle' },
 						props.subtitle
 					)
 				)
@@ -886,6 +996,13 @@ var Header = function (_Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_preact__["Component"]);
 
 
+
+/***/ }),
+
+/***/ "mo1Q":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "dde14227fd6e8257f5a31eb7deb2ea3a.jpg";
 
 /***/ }),
 
