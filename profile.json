@@ -1,0 +1,114 @@
+{
+    "header": {
+        "title": "Homepage Generator",
+        "subtitle": "Quickly spin up a personal website",
+        "background_color": "#663AB7",
+        "background_image": "newcastle.jpg",
+        "background_images": [{
+            "width": 2560,
+            "filename": "newcastle-xlarge.jpg"
+        }, {
+            "width": 1920,
+            "filename": "newcastle.jpg"
+        }, {
+            "width": 1600,
+            "filename": "newcastle-large.jpg"
+        }, {
+            "width": 1280,
+            "filename": "newcastle-medium.jpg"
+        }, {
+            "width": 960,
+            "filename": "newcastle-small.jpg"
+        }, {
+            "width": 480,
+            "filename": "newcastle-xsmall.jpg"
+        }]
+    },
+    "profile": {
+        "title": "Profile",
+        "background_color": "#FFF",
+        "about": {
+            "title": "About me",
+            "description": "I love easy to build pages!"
+        },
+        "bio": {
+            "title": "Bio",
+            "list": [{
+                    "label": "How cool?",
+                    "value": "Very cool."
+                },
+                {
+                    "label": "Where",
+                    "value": "In the cloud..."
+                }
+            ]
+        }
+    },
+    "experience": {
+        "title": "Experience",
+        "background_color": "#41564E",
+        "list": [{
+                "title": "Education",
+                "list": [{
+                    "location": "On my computer",
+                    "time": {
+                        "from": "2017",
+                        "to": "Present"
+                    },
+                    "title": "Building this",
+                    "description": "Quickly spun this up in a day for my own personal website"
+                }]
+            },
+            {
+                "title": "What else?",
+                "list": [{
+                    "location": "Example",
+                    "time": {
+                        "from": "Apr 2011",
+                        "to": "Apr 2014"
+                    },
+                    "title": "Something else",
+                    "description": "Some more stuff."
+                }, {
+                    "location": "Example",
+                    "time": {
+                        "from": "Apr 2011",
+                        "to": "Apr 2014"
+                    },
+                    "title": "Something else",
+                    "description": "Some more stuff."
+                }]
+            }
+        ]
+    },
+    "skills": {
+        "title": "Skills",
+        "background_color": "#FFF",
+        "list": [{
+            "label": "Speed",
+            "value": 5
+        }, {
+            "label": "Simplicity",
+            "value": 5
+        }, {
+            "label": "Elegance",
+            "value": 5
+        }, {
+            "label": "Uniqueness",
+            "value": 4
+        }]
+    },
+    "contact": {
+        "title": "Any other links?",
+        "background_color": "#5DC6DD",
+        "list": [{
+            "label": "Live Example",
+            "link": "http://thomaswood.me/",
+            "icon_class": "globe"
+        }, {
+            "label": "GitHub",
+            "link": "https://github.com/tomasswood/preact-homepage-generator",
+            "icon_class": "github"
+        }]
+    }
+}
