@@ -72,7 +72,7 @@ module.exports =
 /***/ "+5hP":
 /***/ (function(module, exports) {
 
-module.exports = {"header":{"title":"Homepage Generator","subtitle":"Quickly spin up a personal website","background_color":"#663AB7","background_image":"newcastle.jpg","background_images":[{"width":2560,"filename":"newcastle-xlarge.jpg"},{"width":1920,"filename":"newcastle.jpg"},{"width":1600,"filename":"newcastle-large.jpg"},{"width":1280,"filename":"newcastle-medium.jpg"},{"width":960,"filename":"newcastle-small.jpg"},{"width":480,"filename":"newcastle-xsmall.jpg"}]},"profile":{"title":"Profile","background_color":"#FFF","about":{"title":"About me","description":"I love easy to build pages!"},"bio":{"title":"Bio","list":[{"label":"How cool?","value":"Very cool."},{"label":"Where","value":"In the cloud..."}]}},"experience":{"title":"Experience","background_color":"#41564E","list":[{"title":"Education","list":[{"location":"On my computer","time":{"from":"2017","to":"Present"},"title":"Building this","description":"Quickly spun this up in a day for my own personal website"}]},{"title":"What else?","list":[{"location":"Example","time":{"from":"Apr 2011","to":"Apr 2014"},"title":"Something else","description":"Some more stuff."},{"location":"Example","time":{"from":"Apr 2011","to":"Apr 2014"},"title":"Something else","description":"Some more stuff."}]}]},"skills":{"title":"Skills","background_color":"#FFF","list":[{"label":"Speed","value":5},{"label":"Simplicity","value":5},{"label":"Elegance","value":5},{"label":"Uniqueness","value":4}]},"contact":{"title":"Any other links?","background_color":"#5DC6DD","list":[{"label":"Live Example","link":"http://thomaswood.me/","icon_class":"globe"},{"label":"GitHub","link":"https://github.com/tomasswood/preact-homepage-generator","icon_class":"github"}]}}
+module.exports = {"header":{"title":"Homepage Generator","subtitle":"Quickly spin up a personal website","background_color":"#663AB7","background_image":"newcastle.jpg","background_images":[{"width":2560,"filename":"newcastle-xlarge.jpg"},{"width":1920,"filename":"newcastle.jpg"},{"width":1600,"filename":"newcastle-large.jpg"},{"width":1280,"filename":"newcastle-medium.jpg"},{"width":960,"filename":"newcastle-small.jpg"},{"width":480,"filename":"newcastle-xsmall.jpg"}]},"profile":{"title":"Profile","background_color":"#FFF","about":{"title":"About me","description":"I love easy to build pages!"},"bio":{"title":"Bio","list":[{"label":"How cool?","value":"Very cool."},{"label":"Where","value":"In the cloud..."}]}},"experience":{"title":"Experience","background_color":"#41564E","list":[{"title":"Education","list":[{"location":"On my computer","time":{"from":"2017","to":"Present"},"title":"Building this","description":"Quickly spun this up in a day for my own personal website"}]},{"title":"What else?","list":[{"location":"Example","time":{"from":"Apr 2011","to":"Apr 2014"},"title":"Something else","description":"Some more stuff."},{"location":"Example","time":{"from":"Apr 2014"},"title":"Something else","description":"Some more stuff."}]}]},"skills":{"title":"Skills","background_color":"#FFF","list":[{"label":"Speed","value":5},{"label":"Simplicity","value":5},{"label":"Elegance","value":5},{"label":"Uniqueness","value":4}]},"contact":{"title":"Any other links?","background_color":"#5DC6DD","list":[{"label":"Live Example","link":"http://thomaswood.me/","icon_class":"globe"},{"label":"GitHub","link":"https://github.com/tomasswood/preact-homepage-generator","icon_class":"github"}]}}
 
 /***/ }),
 
@@ -209,28 +209,32 @@ var Profile = function (_Component) {
 	}
 
 	Profile.prototype.render = function render(props) {
-		var bioLabels = props.bio.list.map(function (item) {
-			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-				"li",
-				{ key: item.label },
-				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-					"strong",
-					null,
-					item.label
-				)
-			);
-		}),
-		    bioValues = props.bio.list.map(function (item) {
-			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-				"li",
-				{ key: item.value },
-				item.value
-			);
-		}),
-		    bioList = bioLabels.reduce(function (list, item, i) {
-			list.push(item, bioValues[i]);
-			return list;
-		}, []);
+		var bioList = [];
+		if (props.bio && props.bio.list) {
+			var bioLabels = props.bio.list.map(function (item) {
+				return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					"li",
+					{ key: item.label },
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+						"strong",
+						null,
+						item.label
+					)
+				);
+			}),
+			    bioValues = props.bio.list.map(function (item) {
+				return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					"li",
+					{ key: item.value },
+					item.value
+				);
+			});
+
+			bioList = bioLabels.reduce(function (list, item, i) {
+				list.push(item, bioValues[i]);
+				return list;
+			}, []);
+		}
 
 		return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 			"main",
@@ -251,12 +255,12 @@ var Profile = function (_Component) {
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 					"div",
 					{ "class": "summary" },
-					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					props.about && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 						"h5",
 						null,
 						props.about.title
 					),
-					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					props.about && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 						"p",
 						null,
 						props.about.description
@@ -750,9 +754,12 @@ module.exports = __webpack_require__.p + "cfb572d7700e8995aefaf25a49cbb7d9.jpg";
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* unused harmony export formatTime */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Experience; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__("KM04");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -763,6 +770,14 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+var formatTime = function formatTime(_ref) {
+	var from = _ref.from,
+	    to = _ref.to;
+	return [from, to].filter(function (val) {
+		return val;
+	}).join(' - ');
+};
+
 var ResumeItem = function (_Component) {
 	_inherits(ResumeItem, _Component);
 
@@ -772,15 +787,13 @@ var ResumeItem = function (_Component) {
 		return _possibleConstructorReturn(this, _Component.apply(this, arguments));
 	}
 
-	ResumeItem.prototype.render = function render(_ref) {
-		var location = _ref.location,
-		    time = _ref.time,
-		    title = _ref.title,
-		    description = _ref.description;
+	ResumeItem.prototype.render = function render(_ref2) {
+		var location = _ref2.location,
+		    time = _ref2.time,
+		    title = _ref2.title,
+		    description = _ref2.description;
 
-		var timePeriod = [time.from, time.to].filter(function (val) {
-			return val;
-		}).join(' - ');
+		var timePeriod = formatTime(_extends({}, time));
 
 		return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 			'div',
@@ -795,7 +808,7 @@ var ResumeItem = function (_Component) {
 				),
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 					'p',
-					null,
+					{ 'class': 'time-period' },
 					timePeriod
 				)
 			),
@@ -828,9 +841,9 @@ var ExperienceItem = function (_Component2) {
 		return _possibleConstructorReturn(this, _Component2.apply(this, arguments));
 	}
 
-	ExperienceItem.prototype.render = function render(_ref2) {
-		var title = _ref2.title,
-		    list = _ref2.list;
+	ExperienceItem.prototype.render = function render(_ref3) {
+		var title = _ref3.title,
+		    list = _ref3.list;
 
 		return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 			'div',
@@ -849,7 +862,7 @@ var ExperienceItem = function (_Component2) {
 	return ExperienceItem;
 }(__WEBPACK_IMPORTED_MODULE_0_preact__["Component"]);
 
-var _ref3 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('div', { 'class': 'divider' });
+var _ref4 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('div', { 'class': 'divider' });
 
 var Experience = function (_Component3) {
 	_inherits(Experience, _Component3);
@@ -880,7 +893,7 @@ var Experience = function (_Component3) {
 					return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 						'div',
 						{ 'class': 'experience-item' },
-						_ref3,
+						_ref4,
 						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(ExperienceItem, item)
 					);
 				})
@@ -961,7 +974,7 @@ var Header = function (_Component) {
 
 		var _this = _possibleConstructorReturn(this, _Component.call(this));
 
-		_this.state.background_image = determineImage(props.background_image, props.background_images);
+		_this.state.background_image = props.background_image || props.background_images ? determineImage(props.background_image, props.background_images) : null;
 		return _this;
 	}
 
@@ -1041,7 +1054,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-// import Home from 'async!./home';
 
 var _ref = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 	'div',

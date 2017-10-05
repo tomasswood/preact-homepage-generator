@@ -72,8 +72,7 @@
                 }, {
                     "location": "Example",
                     "time": {
-                        "from": "Apr 2011",
-                        "to": "Apr 2014"
+                        "from": "Apr 2014"
                     },
                     "title": "Something else",
                     "description": "Some more stuff."

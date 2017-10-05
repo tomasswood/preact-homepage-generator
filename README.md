@@ -1,4 +1,4 @@
-# Preact Homepage Generator [![Build Status](https://travis-ci.org/tomasswood/preact-homepage-generator.svg?branch=master)](https://travis-ci.org/tomasswood/preact-homepage-generator)
+# Preact Homepage Generator [![Build Status](https://travis-ci.org/tomasswood/preact-homepage-generator.svg?branch=master)](https://travis-ci.org/tomasswood/preact-homepage-generator) [![Coverage Status](https://coveralls.io/repos/github/tomasswood/preact-homepage-generator/badge.svg?branch=master)](https://coveralls.io/github/tomasswood/preact-homepage-generator?branch=master)
 Quickly spin up a new personal webpage by only needing to modify JSON data!
 
 Built using [Preact CLI](https://github.com/developit/preact-cli).

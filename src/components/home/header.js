@@ -36,7 +36,7 @@ export default class Header extends Component {
 	constructor( props ) {
 		super();
 
-		this.state.background_image = determineImage( props.background_image, props.background_images );
+		this.state.background_image = ( props.background_image || props.background_images ) ? determineImage( props.background_image, props.background_images ) : null;
 	}
 
 	render( props, { background_image } ) {
