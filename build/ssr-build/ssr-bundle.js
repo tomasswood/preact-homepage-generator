@@ -919,9 +919,13 @@ module.exports = __webpack_require__.p + "fa1386098b541e95769539f4bdb64bf8.jpg";
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* unused harmony export viewSize */
+/* unused harmony export chooseBackgroundImages */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Header; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__("KM04");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -936,34 +940,52 @@ var requireAll = function requireAll(requireContext) {
 	return requireContext.keys().map(requireContext);
 };
 
-var determineImage = function determineImage(backgroundImage, backgroundImages) {
-	var viewport = typeof window !== 'undefined' ? window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth : '1920',
+var viewSize = function viewSize() {
+	var viewport = typeof window !== 'undefined' ? window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth : 1920,
 	    ratio = typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1;
 
-	var headerImage = __webpack_require__("JBMF")("./" + backgroundImage);
+	return { viewport: viewport, ratio: ratio };
+};
+
+var chooseBackgroundImages = function chooseBackgroundImages(backgroundImages, imageModules, _ref) {
+	var _ref$viewport = _ref.viewport,
+	    viewport = _ref$viewport === undefined ? 1920 : _ref$viewport,
+	    _ref$ratio = _ref.ratio,
+	    ratio = _ref$ratio === undefined ? 1 : _ref$ratio;
+
+	var headerImage = void 0,
+	    imagesSized = backgroundImages.reduce(function (arr, image, i) {
+		if (viewport * ratio < image.width) {
+			image.filename = imageModules[i];
+			arr.push(image);
+		}
+
+		return arr;
+	}, []);
+	if (imagesSized.length) {
+		var lastImage = imagesSized.pop();
+		if (lastImage && lastImage.filename) {
+			headerImage = lastImage.filename;
+		}
+	} else {
+		headerImage = imageModules[0];
+	}
+
+	return headerImage;
+};
+
+var determineImage = function determineImage(backgroundImage, backgroundImages) {
+	var headerImage = void 0;
 	if (backgroundImages) {
 		var imageModules = requireAll(__webpack_require__("NfrT"));
-		var imagesSized = backgroundImages.reduce(function (arr, image, i) {
-			if (viewport * ratio < image.width) {
-				image.filename = imageModules[i];
-				arr.push(image);
-			}
-
-			return arr;
-		}, []);
-		if (imagesSized.length) {
-			var lastImage = imagesSized.pop();
-			if (lastImage && lastImage.filename) {
-				headerImage = lastImage.filename;
-			}
-		}
+		headerImage = chooseBackgroundImages(backgroundImages, imageModules, _extends({}, viewSize()));
+	} else {
+		headerImage = __webpack_require__("JBMF")("./" + backgroundImage);
 	}
 
 	if (headerImage) {
 		return 'url(' + headerImage + ')';
 	}
-
-	return;
 };
 
 var Header = function (_Component) {
@@ -978,8 +1000,8 @@ var Header = function (_Component) {
 		return _this;
 	}
 
-	Header.prototype.render = function render(props, _ref) {
-		var background_image = _ref.background_image;
+	Header.prototype.render = function render(props, _ref2) {
+		var background_image = _ref2.background_image;
 
 		return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 			'header',

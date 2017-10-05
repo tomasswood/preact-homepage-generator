@@ -17,7 +17,7 @@ test( 'check if Profile is modifying backgroundColor', () => {
 } );
 
 test( 'check if Profile is not rendering Bios', () => {
-	const actual = shallow( <Profile title="Test!" /> );
+	const actual = shallow( <Profile title="Test!" about={{title: "testing"}}/> );
 	expect( actual.find( 'li' ).length ).toEqual( 0 );
 } );
 
