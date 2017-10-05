@@ -1,14 +1,16 @@
 import { h, Component } from 'preact';
 
+export const formatTime = ( { from, to } ) => [ from, to ].filter( val => val ).join( ' - ' );
+
 class ResumeItem extends Component {
 	render( { location, time, title, description } ) {
-		const timePeriod = [ time.from, time.to ].filter( val => val ).join( ' - ' );
+		const timePeriod = formatTime( { ...time } );
 
 		return (
 			<div class="resume-item">
 				<div class="qualification">
 					<strong>{location}</strong>
-					<p>{timePeriod}</p>
+					<p class="time-period">{timePeriod}</p>
 				</div>
 				<div class="summary">
 					<strong>{title}</strong>
