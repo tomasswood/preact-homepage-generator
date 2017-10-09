@@ -1,0 +1,7 @@
+exclude:
+- /build/polyfills.dfb61.js
+- /build/ssr-build/ssr-bundle.js
+- /build/sw.js
+component_depth: 1
+languages:
+- javascript
