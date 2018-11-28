@@ -55,12 +55,16 @@
         "preact-render-spy": "^1.1.0"
     },
     "dependencies": {
+        "ajv": "^5.5.2",
         "font-awesome": "^4.7.0",
         "foundation-sites": "^6.4.3",
+        "jquery": "^3.3.1",
         "node-sass": "^4.5.3",
+        "postcss": "^6.0.23",
         "preact": "^8.2.5",
         "preact-compat": "^3.17.0",
         "preact-router": "^2.5.7",
-        "sass-loader": "^6.0.6"
+        "sass-loader": "^6.0.6",
+        "what-input": "^5.1.3"
     }
 }
