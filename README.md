@@ -1,4 +1,5 @@
 # Preact Homepage Generator [![Build Status](https://travis-ci.org/tomasswood/preact-homepage-generator.svg?branch=master)](https://travis-ci.org/tomasswood/preact-homepage-generator) [![Coverage Status](https://coveralls.io/repos/github/tomasswood/preact-homepage-generator/badge.svg?branch=master)](https://coveralls.io/github/tomasswood/preact-homepage-generator?branch=master) [![CodeFactor](https://www.codefactor.io/repository/github/tomasswood/preact-homepage-generator/badge)](https://www.codefactor.io/repository/github/tomasswood/preact-homepage-generator) [![BCH compliance](https://bettercodehub.com/edge/badge/tomasswood/preact-homepage-generator?branch=master)](https://bettercodehub.com/)
+
 Quickly spin up a new personal webpage by only needing to modify JSON data!
 
 Built using [Preact CLI](https://github.com/developit/preact-cli).
@@ -9,6 +10,9 @@ npm install -g add preact-cli
 
 # clone this repo
 git clone https://github.com/tomasswood/preact-homepage-generator.git
+
+# install dependencies
+npm install
 
 # start a live-reload/HMR dev server:
 npm start
